@@ -578,6 +578,7 @@ def get_vdw_style(vdw_styles, cut_styles, cutoffs):
     valid_cut_styles["lj"].append("cut_tail")
     valid_cut_styles["lj"].append("cut_switch")
     valid_cut_styles["lj"].append("cut_shift")
+    valid_cut_styles["lj"].append("cut_shift-force")
     valid_cut_styles["none"].append(None)
     for vdw_style in vdw_styles:
         if vdw_style not in valid_vdw_styles:
@@ -1820,7 +1821,7 @@ def _get_possible_kwargs(desc=False):
     valid_kwargs = {
         "run_name": "str, name of output",
         "vdw_style": 'str, "lj" or "none"',
-        "cutoff_style": 'str, "cut" or "cut_tail" or "cut_switch" or "cut_shift"',
+        "cutoff_style": 'str, "cut" or "cut_tail" or "cut_switch" or "cut_shift" or "cut_shift-force"',
         "vdw_cutoff": 'float, except for "cut_switch", where [inner_cutoff, outer_cutoff].',
         "vdw_cutoff_box1": 'customize vdw cutoff for box 1. see "vdw_cutoff" for format',
         "vdw_cutoff_box2": 'customize vdw cutoff for box 2. see "vdw_cutoff" for format',
