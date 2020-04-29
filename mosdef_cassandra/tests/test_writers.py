@@ -200,6 +200,17 @@ class TestInpFunctions(BaseTest):
         )
         assert "# VDW_Style\nlj cut_shift 15.0" in inp_data
 
+        inp_data = generate_input(
+            system=system,
+            moves=moves,
+            run_type="equilibration",
+            run_length=500,
+            temperature=300.0,
+            cutoff_style="cut_shift-force",
+            vdw_cutoff=9.0,
+        )
+        assert "# VDW_Style\nlj cut_shift-force 9.0" in inp_data
+
         with pytest.raises(ValueError, match=r"Only one box"):
             inp_data = generate_input(
                 system=system,
