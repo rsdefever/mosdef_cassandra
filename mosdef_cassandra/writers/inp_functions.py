@@ -611,7 +611,7 @@ def get_vdw_style(vdw_styles, cut_styles, cutoffs):
         if vdw_style not in valid_vdw_styles:
             raise ValueError(
                 "Unsupported vdw_style: {}. Supported options "
-                "include {}".format(vdw_style, vdw_styles)
+                "include {}".format(vdw_style, valid_vdw_styles)
             )
     for cut_style, vdw_style in zip(cut_styles, vdw_styles):
         if cut_style not in valid_cut_styles[vdw_style]:
@@ -686,7 +686,7 @@ def get_charge_style(
         if charge_style not in valid_charge_styles:
             raise ValueError(
                 "Unsupported charge_style: {}. Supported options "
-                "include {}".format(charge_style, charge_styles)
+                "include {}".format(charge_style, valid_charge_styles)
             )
         if charge_style == "ewald":
             if ewald_accuracy is None:
